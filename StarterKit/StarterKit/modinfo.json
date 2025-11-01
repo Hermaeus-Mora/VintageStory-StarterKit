@@ -1,7 +1,7 @@
 {
     "type": "Code",
     "side": "server",
-    "modid": "starterkit",
+    "modid": "starterkitbytulikettu",
     "name": "Starter Kit",
     "version": "1.0.0",
     "description": "Adds the ability to create a starter kit.",
