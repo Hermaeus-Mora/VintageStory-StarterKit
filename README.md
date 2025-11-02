@@ -58,7 +58,7 @@
 </details>
 
 <details>
-  <summary>Прмеры</summary>
+  <summary>Прмеры использования атрибутов</summary>
 
   <details>
     <summary>Поломанная стальная кирка</summary>
