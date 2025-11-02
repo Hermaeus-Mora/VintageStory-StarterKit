@@ -61,10 +61,10 @@
   <summary>Прмеры использования атрибутов</summary>
 
   <details>
-    <summary>Поломанная стальная кирка</summary>
+    <summary>Изношенная стальная кирка</summary>
     <pre>{
   "Code": "game:pickaxe-steel",
-  "Amount": 2,
+  "Amount": 1,
   "Attributes": [
     { "Type": "int", "Key": "durability", "Value": "347" }
   ]
