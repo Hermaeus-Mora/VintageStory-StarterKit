@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Failed to read configuration file StarterKit.json",
+  "IO.ConfigWriteException": "Failed to write configuration file StarterKit.json",
+
+  "Creator.CreateItemException": "Error defining item \"{0}\"",
+  "Creator.ItemCodeNotFound": "Item \"{0}\" not found",
+  "Creator.CreateStackException": "Error forming item stack \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Kit is empty or an error occurred during its formation",
+
+  "Attributes.EmptyKey": "Attribute key is empty",
+  "Attributes.InvalidValueOrType": "Value and/or type of attribute \"{0}\" is invalid",
+  "Attributes.SetException": "Failed to set value for attribute \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Calling player or their information not found",
+  "Players.AllKitsReceived": "You have already received all available kits",
+  "Players.KitReceived": "Starter kit received",
+
+  "Updating.Updated": "Configuration updated successfully",
+
+  "Reset.All": "Received kit count reset for all players",
+  "Reset.Specified.NoPlayers": "Player list not specified",
+  "Reset.Specified.Full": "Received kit count reset for all specified players",
+  "Reset.Specified.Partial": "Received kit count reset for all specified players, except {0} - they were not found"
+}

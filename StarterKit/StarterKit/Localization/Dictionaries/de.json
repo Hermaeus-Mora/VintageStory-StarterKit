@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Konfigurationsdatei StarterKit.json konnte nicht gelesen werden",
+  "IO.ConfigWriteException": "Konfigurationsdatei StarterKit.json konnte nicht geschrieben werden",
+
+  "Creator.CreateItemException": "Fehler beim Definieren des Gegenstands \"{0}\"",
+  "Creator.ItemCodeNotFound": "Gegenstand \"{0}\" nicht gefunden",
+  "Creator.CreateStackException": "Fehler beim Bilden des Gegenstandsstapels \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Kit ist leer oder ein Fehler ist bei der Erstellung aufgetreten",
+
+  "Attributes.EmptyKey": "Attributschlüssel ist leer",
+  "Attributes.InvalidValueOrType": "Wert und/oder Typ des Attributs \"{0}\" ist ungültig",
+  "Attributes.SetException": "Attributwert \"{0}\" konnte nicht gesetzt werden",
+
+  "Players.PlayerOrDataNotFound": "Aufrufender Spieler oder dessen Informationen nicht gefunden",
+  "Players.AllKitsReceived": "Sie haben bereits alle verfügbaren Kits erhalten",
+  "Players.KitReceived": "Starter-Kit erhalten",
+
+  "Updating.Updated": "Konfiguration erfolgreich aktualisiert",
+
+  "Reset.All": "Anzahl erhaltener Kits für alle Spieler zurückgesetzt",
+  "Reset.Specified.NoPlayers": "Spielerliste nicht angegeben",
+  "Reset.Specified.Full": "Anzahl erhaltener Kits für alle angegebenen Spieler zurückgesetzt",
+  "Reset.Specified.Partial": "Anzahl erhaltener Kits für alle angegebenen Spieler zurückgesetzt, außer {0} - diese wurden nicht gefunden"
+}

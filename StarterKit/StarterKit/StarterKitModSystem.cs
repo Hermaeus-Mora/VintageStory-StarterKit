@@ -1,4 +1,7 @@
-﻿using Vintagestory.API.Common;
+﻿using StarterKit.Commands;
+using StarterKit.Localization;
+using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 
 namespace StarterKit
@@ -17,11 +20,10 @@ namespace StarterKit
         /// Конфигурация мода.
         /// </summary>
         public StarterKitConfig? Config { get; private set; }
-
         /// <summary>
-        /// Команда стартового набора.
+        /// Менеджер команд.
         /// </summary>
-        private StarterKitCommand? StarterKitCommand { get; set; }
+        public CommandManager? CommandManager { get; private set; }
 
         /// <summary>
         /// Определяет, нужно ли запускать мод.
@@ -38,10 +40,16 @@ namespace StarterKit
         /// <param name="api">API сервера.</param>
         public override void StartServerSide(ICoreServerAPI api)
         {
+            // Инициализация словарей
+            Localizer.Initialize();
+            Localizer.SetSource(Lang.CurrentLocale);
+
+            // Инициализация и загрузка конфигурации
             Config = new StarterKitConfig(api);
             Config.Load(true);
 
-            StarterKitCommand = new StarterKitCommand(api, Config);
+            // Инициализация команд
+            CommandManager = new CommandManager(api, Config);
         }
     }
 }

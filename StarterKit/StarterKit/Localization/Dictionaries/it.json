@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Impossibile leggere il file di configurazione StarterKit.json",
+  "IO.ConfigWriteException": "Impossibile scrivere il file di configurazione StarterKit.json",
+
+  "Creator.CreateItemException": "Errore nella definizione dell'oggetto \"{0}\"",
+  "Creator.ItemCodeNotFound": "Oggetto \"{0}\" non trovato",
+  "Creator.CreateStackException": "Errore nella formazione dello stack di oggetti \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Il kit è vuoto o si è verificato un errore durante la sua formazione",
+
+  "Attributes.EmptyKey": "La chiave dell'attributo è vuota",
+  "Attributes.InvalidValueOrType": "Il valore e/o il tipo dell'attributo \"{0}\" non è valido",
+  "Attributes.SetException": "Impossibile impostare il valore dell'attributo \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Giocatore chiamante o le sue informazioni non trovate",
+  "Players.AllKitsReceived": "Hai già ricevuto tutti i kit disponibili",
+  "Players.KitReceived": "Kit di avvio ricevuto",
+
+  "Updating.Updated": "Configurazione aggiornata con successo",
+
+  "Reset.All": "Il conteggio dei kit ricevuti è stato reimpostato per tutti i giocatori",
+  "Reset.Specified.NoPlayers": "Elenco dei giocatori non specificato",
+  "Reset.Specified.Full": "Il conteggio dei kit ricevuti è stato reimpostato per tutti i giocatori specificati",
+  "Reset.Specified.Partial": "Il conteggio dei kit ricevuti è stato reimpostato per tutti i giocatori specificati, eccetto {0} - non sono stati trovati"
+}

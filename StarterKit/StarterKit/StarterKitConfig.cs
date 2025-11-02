@@ -1,4 +1,7 @@
-﻿using System;
+﻿using StarterKit.Core;
+using StarterKit.Localization;
+using StarterKit.Tweaks.ItemStack.Attributes;
+using System;
 using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -22,7 +25,7 @@ namespace StarterKit
         /// <summary>
         /// Предметы стартового набора.
         /// </summary>
-        public ItemInfo[] Items;
+        public StackInfo?[] Items;
 
         /// <summary>
         /// Конструктор конфигурации мода.
@@ -33,7 +36,7 @@ namespace StarterKit
             API = api;
 
             PermittedReceives = 1;
-            Items = Array.Empty<ItemInfo>();
+            Items = Array.Empty<StackInfo?>();
         }
 
         /// <summary>
@@ -42,6 +45,7 @@ namespace StarterKit
         /// <param name="createIfError">Записать новый файл конфигурации при ошибке.</param>
         public void Load(bool createIfError = false)
         {
+            // Чтение файла конфигурации
             StarterKitConfig? config = null;
             try
             {
@@ -49,16 +53,18 @@ namespace StarterKit
             }
             catch (Exception ex)
             {
-                API.Logger.Error($"Failed to load {StarterKitModSystem.ModName} configuration.");
+                API.Logger.Error(Localizer.Get("IO.ConfigReadException"));
                 API.Logger.Error(ex);
 
                 if (!createIfError)
                     return;
             }
 
+            // Создание нового экземпляра, если необходимо
             bool needSave = config == null;
             config ??= new StarterKitConfig(API);
 
+            // Копирование полей и сохранение
             CopyFields(config);
             if (needSave)
                 Save();
@@ -74,7 +80,7 @@ namespace StarterKit
             }
             catch (Exception ex)
             {
-                API.Logger.Error($"Failed to save {StarterKitModSystem.ModName} configuration.");
+                API.Logger.Error(Localizer.Get("IO.ConfigWriteException"));
                 API.Logger.Error(ex);
             }
         }
@@ -89,7 +95,7 @@ namespace StarterKit
                 return;
 
             PermittedReceives = config.PermittedReceives;
-            Items = config.Items;
+            Items = config.Items ?? Array.Empty<StackInfo?>();
         }
         /// <summary>
         /// Создаёт стаки предметов стартового набора.
@@ -97,26 +103,82 @@ namespace StarterKit
         /// <returns>Список стаков или пустой, если возникла ошибка.</returns>
         public List<ItemStack> CreateItems()
         {
-            ItemInfo[] items = Items;
+            // Копирование ссылки на информацию о стаках
+            StackInfo?[] items = Items;
+
+            // Объявление игровых стаков
             List<ItemStack> stacks = new List<ItemStack>();
-            foreach (ItemInfo info in Items)
+
+            // Формирование стаков
+            foreach (StackInfo? info in Items)
             {
+                // Игнорирование пустых стаков
+                if (info == null)
+                    continue;
                 if (info.Amount <= 0)
                     continue;
 
+                // Получение предмета по коду
                 Item? item;
-                try { item = API.World.GetItem(new AssetLocation(info.Code)); }
-                catch { return []; }
-                if (item == null)
+                try
+                {
+                    item = API.World.GetItem(new AssetLocation(info.Code));
+                }
+                catch (Exception ex)
+                {
+                    API.Logger.Error(Localizer.Get("Creator.CreateItemException", info.Code ?? string.Empty));
+                    API.Logger.Error(ex);
                     return [];
+                }
+                if (item == null)
+                {
+                    API.Logger.Error(Localizer.Get("Creator.ItemCodeNotFound", info.Code ?? string.Empty));
+                    return [];
+                }
 
+                // Формирование стака
                 ItemStack? stack;
-                try { stack = new ItemStack(item, info.Amount); }
-                catch { return []; }
+                try
+                {
+                    stack = new ItemStack(item, info.Amount);
+                }
+                catch
+                {
+                    API.Logger.Error(Localizer.Get("Creator.CreateStackException", info.Code!, info.Amount));
+                    return [];
+                }
 
+                // Запись атрибутов
+                if (info.Attributes != null && info.Attributes.Length > 0)
+                {
+                    foreach (StackAttribute attribute in info.Attributes)
+                    {
+                        // Ошибка при пустом ключе
+                        if (string.IsNullOrWhiteSpace(attribute.Key))
+                        {
+                            API.Logger.Error(Localizer.Get("Attributes.EmptyKey"));
+                            return [];
+                        }    
+
+                        // Ошибка при пустом или некорректном значении
+                        object? value = attribute.GetConverted();
+                        if (value == null)
+                        {
+                            API.Logger.Error(Localizer.Get("Attributes.InvalidValueOrType", attribute.Key));
+                            return [];
+                        }
+
+                        // Установка значения
+                        if (!AttributeSetter.Set(stack, attribute.Key, value, API))
+                            return [];
+                    }
+                }
+
+                // Добавление стака
                 stacks.Add(stack);
             }
 
+            // Возврат
             return stacks;
         }
     }

@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Nie udało się odczytać pliku konfiguracyjnego StarterKit.json",
+  "IO.ConfigWriteException": "Nie udało się zapisać pliku konfiguracyjnego StarterKit.json",
+
+  "Creator.CreateItemException": "Błąd określania przedmiotu \"{0}\"",
+  "Creator.ItemCodeNotFound": "Nie znaleziono przedmiotu \"{0}\"",
+  "Creator.CreateStackException": "Błąd tworzenia stosu przedmiotów \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Zestaw jest pusty lub wystąpił błąd podczas jego tworzenia",
+
+  "Attributes.EmptyKey": "Klucz atrybutu jest pusty",
+  "Attributes.InvalidValueOrType": "Wartość i/lub typ atrybutu \"{0}\" jest nieprawidłowy",
+  "Attributes.SetException": "Nie udało się ustawić wartości atrybutu \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Nie znaleziono wywołującego gracza lub jego informacji",
+  "Players.AllKitsReceived": "Otrzymałeś już wszystkie dostępne zestawy",
+  "Players.KitReceived": "Otrzymano zestaw startowy",
+
+  "Updating.Updated": "Konfiguracja została pomyślnie zaktualizowana",
+
+  "Reset.All": "Liczba otrzymanych zestawów została zresetowana dla wszystkich graczy",
+  "Reset.Specified.NoPlayers": "Lista graczy nie została określona",
+  "Reset.Specified.Full": "Liczba otrzymanych zestawów została zresetowana dla wszystkich określonych graczy",
+  "Reset.Specified.Partial": "Liczba otrzymanych zestawów została zresetowana dla wszystkich określonych graczy, z wyjątkiem {0} - nie znaleziono ich"
+}

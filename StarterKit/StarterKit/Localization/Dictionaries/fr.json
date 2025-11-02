@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Impossible de lire le fichier de configuration StarterKit.json",
+  "IO.ConfigWriteException": "Impossible d'écrire le fichier de configuration StarterKit.json",
+
+  "Creator.CreateItemException": "Erreur de définition de l'objet \"{0}\"",
+  "Creator.ItemCodeNotFound": "Objet \"{0}\" non trouvé",
+  "Creator.CreateStackException": "Erreur de formation de la pile d'objets \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Le kit est vide ou une erreur s'est produite lors de sa formation",
+
+  "Attributes.EmptyKey": "La clé d'attribut est vide",
+  "Attributes.InvalidValueOrType": "La valeur et/ou le type de l'attribut \"{0}\" est invalide",
+  "Attributes.SetException": "Impossible de définir la valeur de l'attribut \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Joueur appelant ou ses informations non trouvés",
+  "Players.AllKitsReceived": "Vous avez déjà reçu tous les kits disponibles",
+  "Players.KitReceived": "Kit de démarrage reçu",
+
+  "Updating.Updated": "Configuration mise à jour avec succès",
+
+  "Reset.All": "Le nombre de kits reçus a été réinitialisé pour tous les joueurs",
+  "Reset.Specified.NoPlayers": "Liste des joueurs non spécifiée",
+  "Reset.Specified.Full": "Le nombre de kits reçus a été réinitialisé pour tous les joueurs spécifiés",
+  "Reset.Specified.Partial": "Le nombre de kits reçus a été réinitialisé pour tous les joueurs spécifiés, sauf {0} - ils n'ont pas été trouvés"
+}

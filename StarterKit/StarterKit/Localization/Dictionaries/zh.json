@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "无法读取配置文件 StarterKit.json",
+  "IO.ConfigWriteException": "无法写入配置文件 StarterKit.json",
+
+  "Creator.CreateItemException": "定义物品 \"{0}\" 时出错",
+  "Creator.ItemCodeNotFound": "未找到物品 \"{0}\"",
+  "Creator.CreateStackException": "形成物品堆 \"{0}\" × {1} 时出错",
+  "Creator.EmptyOrErrorKit": "礼包为空或形成时发生错误",
+
+  "Attributes.EmptyKey": "属性键为空",
+  "Attributes.InvalidValueOrType": "属性 \"{0}\" 的值和/或类型无效",
+  "Attributes.SetException": "无法设置属性 \"{0}\" 的值",
+
+  "Players.PlayerOrDataNotFound": "未找到调用玩家或其信息",
+  "Players.AllKitsReceived": "您已领取所有可用的礼包",
+  "Players.KitReceived": "已领取新手礼包",
+
+  "Updating.Updated": "配置更新成功",
+
+  "Reset.All": "所有玩家的已领取礼包数量已重置",
+  "Reset.Specified.NoPlayers": "未指定玩家列表",
+  "Reset.Specified.Full": "所有指定玩家的已领取礼包数量已重置",
+  "Reset.Specified.Partial": "所有指定玩家的已领取礼包数量已重置，除了 {0} - 未找到这些玩家"
+}

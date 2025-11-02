@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "StarterKit.json konfiguratsioonifaili lugemine ebaõnnestus",
+  "IO.ConfigWriteException": "StarterKit.json konfiguratsioonifaili kirjutamine ebaõnnestus",
+
+  "Creator.CreateItemException": "Viga eseme \"{0}\" määratlemisel",
+  "Creator.ItemCodeNotFound": "Eset \"{0}\" ei leitud",
+  "Creator.CreateStackException": "Viga esemete virna \"{0}\" × {1} moodustamisel",
+  "Creator.EmptyOrErrorKit": "Komplekt on tühi või selle loomisel tekkis viga",
+
+  "Attributes.EmptyKey": "Atribuudi võti on tühi",
+  "Attributes.InvalidValueOrType": "Atribuudi \"{0}\" väärtus ja/või tüüp on vigane",
+  "Attributes.SetException": "Atribuudi \"{0}\" väärtuse määramine ebaõnnestus",
+
+  "Players.PlayerOrDataNotFound": "Kutsuv mängija või tema andmed ei leitud",
+  "Players.AllKitsReceived": "Olete juba saanud kõik saadaval olevad komplektid",
+  "Players.KitReceived": "Algusset vastu võetud",
+
+  "Updating.Updated": "Konfiguratsioon uuendati edukalt",
+
+  "Reset.All": "Saadud komplektide arv lähtestati kõigile mängijatele",
+  "Reset.Specified.NoPlayers": "Mängijate nimekirja pole määratud",
+  "Reset.Specified.Full": "Saadud komplektide arv lähtestati kõikidele määratud mängijatele",
+  "Reset.Specified.Partial": "Saadud komplektide arv lähtestati kõikidele määratud mängijatele, välja arvatud {0} - neid ei leitud"
+}

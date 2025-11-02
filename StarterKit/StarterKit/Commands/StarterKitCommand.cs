@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using StarterKit.Core;
+using StarterKit.Localization;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 
-namespace StarterKit
+namespace StarterKit.Commands
 {
     /// <summary>
     /// Команда стартового набора.
     /// </summary>
-    public sealed class StarterKitCommand
+    public sealed class StarterKitCommand : Command
     {
         /// <summary>
         /// Количество полученных игроком стартовых наборов.
@@ -17,24 +19,12 @@ namespace StarterKit
         public const string ReceivesKey = "StarterKit:Receives";
 
         /// <summary>
-        /// API сервера.
-        /// </summary>
-        private readonly ICoreServerAPI API;
-        /// <summary>
-        /// Конфигурация мода.
-        /// </summary>
-        private readonly StarterKitConfig Config;
-
-        /// <summary>
         /// Конструктор команды стартового набора.
         /// </summary>
         /// <param name="api">API сервера.</param>
         /// <param name="config">Конфигурация мода.</param>
-        public StarterKitCommand(ICoreServerAPI api, StarterKitConfig config)
+        internal StarterKitCommand(ICoreServerAPI api, StarterKitConfig config) : base(api, config)
         {
-            API = api;
-            Config = config;
-
             CommandArgumentParsers parsers = API.ChatCommands.Parsers;
             IChatCommand sk = API.ChatCommands.GetOrCreate("starterkit");
             sk.RequiresPrivilege(Privilege.chat);
@@ -70,14 +60,18 @@ namespace StarterKit
         /// <returns>Результат выполнения.</returns>
         public TextCommandResult GetStarterKitHandle(TextCommandCallingArgs args)
         {
+            // Определение игрока и его информации
             IPlayer? player = args.Caller.Player;
-            Dictionary<string, string>? data = API.Server.Players.FirstOrDefault(x => x.PlayerUID == player?.PlayerUID)?.ServerData?.CustomPlayerData;
-            if (player == null || data == null)
-                return TextCommandResult.Error("Player not found.");
+            IServerPlayer? serverPlayer = API.Server.Players.FirstOrDefault(x => x.PlayerUID == player?.PlayerUID);
+            Dictionary<string, string>? data = serverPlayer?.ServerData?.CustomPlayerData;
+            if (player == null || serverPlayer == null || data == null)
+                return TextCommandResult.Error(Localizer.Get("Players.PlayerOrDataNotFound"));
 
+            // Определение количества полученный наборов
             int receives;
             if (data.ContainsKey(ReceivesKey))
             {
+                // Исправление записи
                 if (!int.TryParse(data[ReceivesKey], out receives))
                 {
                     data[ReceivesKey] = "0";
@@ -86,20 +80,25 @@ namespace StarterKit
             }
             else
             {
+                // Регистрация записи
                 data.Add(ReceivesKey, "0");
                 receives = 0;
             }
 
+            // Больше наборов получить нельзя
             if (receives >= Config.PermittedReceives)
-                return TextCommandResult.Success("You have already received all the starter kits.");
+                return TextCommandResult.Success(Localizer.Get(serverPlayer.LanguageCode, "Players.AllKitsReceived"));
 
+            // Формирование набора
             List<ItemStack> stacks = Config.CreateItems();
             if (stacks.Count == 0)
-                return TextCommandResult.Success("The starter kit is empty or there was an error generating it.");
+                return TextCommandResult.Success(Localizer.Get(serverPlayer.LanguageCode, "Creator.EmptyOrErrorKit"));
 
+            // Выдача набора
             bool hasSlots = true;
             for (int i = 0; i < stacks.Count;)
             {
+                // Выдача под ноги, если инвентарь занят
                 ItemStack stack = stacks[i];
                 if (!hasSlots)
                 {
@@ -108,13 +107,15 @@ namespace StarterKit
                     continue;
                 }
 
+                // Выдача в инвентарь
                 hasSlots = player.InventoryManager.TryGiveItemstack(stack, true);
                 if (hasSlots)
                     ++i;
             }
 
+            // Обновление информации игрока
             data[ReceivesKey] = (receives + 1).ToString();
-            return TextCommandResult.Success("Starter kit received.");
+            return TextCommandResult.Success(Localizer.Get(serverPlayer.LanguageCode, "Players.KitReceived"));
         }
         /// <summary>
         /// Обработчик команды обновления конфигурации.
@@ -123,13 +124,15 @@ namespace StarterKit
         /// <returns>Результат выполнения.</returns>
         public TextCommandResult ConfigurationUpdateHandle(TextCommandCallingArgs args)
         {
-            ItemInfo[] items = Config.Items;
+            // Сохранение старой ссылки и обновление конфигурации
+            StackInfo?[] items = Config.Items;
             Config.Load();
 
+            // Оповещение о результате
             if (object.ReferenceEquals(items, Config.Items))
-                return TextCommandResult.Error($"Failed to load {StarterKitModSystem.ModName} configuration.");
+                return TextCommandResult.Error(Localizer.Get("IO.ConfigReadException"));
             else
-                return TextCommandResult.Success("Configuration was updated");
+                return TextCommandResult.Success(Localizer.Get("Updating.Updated"));
         }
         /// <summary>
         /// Обработчик команды сброса количества полученных игроками стартовых наборов.
@@ -141,7 +144,7 @@ namespace StarterKit
             foreach (IServerPlayer player in API.Server.Players)
                 player.ServerData.CustomPlayerData.Remove(ReceivesKey);
 
-            return TextCommandResult.Success("Success");
+            return TextCommandResult.Success(Localizer.Get("Reset.All"));
         }
         /// <summary>
         /// Обработчик команды сброса количества полученных игроками стартовых наборов.
@@ -150,14 +153,17 @@ namespace StarterKit
         /// <returns>Результат выполнения.</returns>
         public TextCommandResult ResetHandle(TextCommandCallingArgs args)
         {
+            // Проверка списка никнеймов
             string? nicknamesArg = args[0] as string;
             if (nicknamesArg == null)
-                return TextCommandResult.Error("No command arguments were found.");
+                return TextCommandResult.Error(Localizer.Get("Reset.Specified.NoPlayers"));
 
+            // Проход по никнеймам
             List<string> notFound = new List<string>();
             List<string> nicknames = nicknamesArg.Split(',', System.StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).ToList();
             foreach (string nickname in nicknames)
             {
+                // Поиск игрока
                 IServerPlayer? player = API.Server.Players.FirstOrDefault(x => x.PlayerName == nickname);
                 if (player == null)
                 {
@@ -165,14 +171,15 @@ namespace StarterKit
                     continue;
                 }
 
+                // Удаление информации
                 player.ServerData.CustomPlayerData.Remove(ReceivesKey);
             }
 
-            StringBuilder builder = new StringBuilder("Success");
-            if (notFound.Count > 0)
-                builder.Append($", but players ({string.Join(", ", notFound)}) were not found.");
-
-            return TextCommandResult.Success(builder.ToString());
+            // Оповещение о результате
+            if (notFound.Count == 0)
+                return TextCommandResult.Success(Localizer.Get("Reset.Specified.Full"));
+            else
+                return TextCommandResult.Success(Localizer.Get("Reset.Specified.Partial", string.Join(", ", notFound)));
         }
     }
 }

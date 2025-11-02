@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Nepodařilo se přečíst konfigurační soubor StarterKit.json",
+  "IO.ConfigWriteException": "Nepodařilo se zapsat konfigurační soubor StarterKit.json",
+
+  "Creator.CreateItemException": "Chyba při určování předmětu \"{0}\"",
+  "Creator.ItemCodeNotFound": "Předmět \"{0}\" nebyl nalezen",
+  "Creator.CreateStackException": "Chyba při vytváření zásobníku předmětů \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Sada je prázdná nebo došlo k chybě při jejím vytváření",
+
+  "Attributes.EmptyKey": "Klíč atributu je prázdný",
+  "Attributes.InvalidValueOrType": "Hodnota a/nebo typ atributu \"{0}\" je neplatný",
+  "Attributes.SetException": "Nepodařilo se nastavit hodnotu atributu \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Volající hráč nebo jeho informace nebyly nalezeny",
+  "Players.AllKitsReceived": "Již jste obdrželi všechny dostupné sady",
+  "Players.KitReceived": "Počáteční sada obdržena",
+
+  "Updating.Updated": "Konfigurace byla úspěšně aktualizována",
+
+  "Reset.All": "Počet obdržených sad byl resetován pro všechny hráče",
+  "Reset.Specified.NoPlayers": "Seznam hráčů nebyl určen",
+  "Reset.Specified.Full": "Počet obdržených sad byl resetován pro všechny uvedené hráče",
+  "Reset.Specified.Partial": "Počet obdržených sad byl resetován pro všechny uvedené hráče, kromě {0} - nebyli nalezeni"
+}

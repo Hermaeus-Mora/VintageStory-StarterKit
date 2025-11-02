@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Neizdevās nolasīt konfigurācijas failu StarterKit.json",
+  "IO.ConfigWriteException": "Neizdevās ierakstīt konfigurācijas failu StarterKit.json",
+
+  "Creator.CreateItemException": "Kļūda, nosakot priekšmetu \"{0}\"",
+  "Creator.ItemCodeNotFound": "Priekšmets \"{0}\" nav atrasts",
+  "Creator.CreateStackException": "Kļūda, veidojot priekšmetu kaudzi \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Komplekts ir tukšs vai radās kļūda tā veidošanas laikā",
+
+  "Attributes.EmptyKey": "Atribūta atslēga ir tukša",
+  "Attributes.InvalidValueOrType": "Atribūta \"{0}\" vērtība un/vai tips ir nederīgs",
+  "Attributes.SetException": "Neizdevās iestatīt atribūta \"{0}\" vērtību",
+
+  "Players.PlayerOrDataNotFound": "Izsaucošais spēlētājs vai viņa informācija nav atrasta",
+  "Players.AllKitsReceived": "Jūs jau esat saņēmis visus pieejamos komplektus",
+  "Players.KitReceived": "Sākuma komplekts saņemts",
+
+  "Updating.Updated": "Konfigurācija veiksmīgi atjaunināta",
+
+  "Reset.All": "Saņemto komplektu skaits atiestatīts visiem spēlētājiem",
+  "Reset.Specified.NoPlayers": "Spēlētāju saraksts nav norādīts",
+  "Reset.Specified.Full": "Saņemto komplektu skaits atiestatīts visiem norādītajiem spēlētājiem",
+  "Reset.Specified.Partial": "Saņemto komplektu skaits atiestatīts visiem norādītajiem spēlētājiem, izņemot {0} - tie netika atrasti"
+}

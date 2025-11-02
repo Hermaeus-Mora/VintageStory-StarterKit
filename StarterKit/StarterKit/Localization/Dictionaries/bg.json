@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Неуспешно прочитане на конфигурационния файл StarterKit.json",
+  "IO.ConfigWriteException": "Неуспешен запис на конфигурационния файл StarterKit.json",
+
+  "Creator.CreateItemException": "Грешка при дефиниране на предмет \"{0}\"",
+  "Creator.ItemCodeNotFound": "Предмет \"{0}\" не е намерен",
+  "Creator.CreateStackException": "Грешка при формиране на стак от предмети \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Комплектът е празен или възникна грешка при неговото формиране",
+
+  "Attributes.EmptyKey": "Ключът на атрибута е празен",
+  "Attributes.InvalidValueOrType": "Стойността и/или типът на атрибута \"{0}\" са невалидни",
+  "Attributes.SetException": "Неуспешно задаване на стойност за атрибут \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Извикващият играч или неговата информация не са намерени",
+  "Players.AllKitsReceived": "Вече сте получили всички налични комплекти",
+  "Players.KitReceived": "Стартовият комплект е получен",
+
+  "Updating.Updated": "Конфигурацията е актуализирана успешно",
+
+  "Reset.All": "Броят на получените комплекти е нулиран за всички играчи",
+  "Reset.Specified.NoPlayers": "Списъкът с играчи не е указан",
+  "Reset.Specified.Full": "Броят на получените комплекти е нулиран за всички указани играчи",
+  "Reset.Specified.Partial": "Броят на получените комплекти е нулиран за всички указани играчи, с изключение на {0} - те не бяха намерени"
+}

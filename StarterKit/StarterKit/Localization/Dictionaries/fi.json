@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "StarterKit.json-asetustiedoston lukeminen epäonnistui",
+  "IO.ConfigWriteException": "StarterKit.json-asetustiedoston kirjoittaminen epäonnistui",
+
+  "Creator.CreateItemException": "Virhe määritettäessä esinettä \"{0}\"",
+  "Creator.ItemCodeNotFound": "Esinettä \"{0}\" ei löytynyt",
+  "Creator.CreateStackException": "Virhe muodostaessa esinekasaan \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Paketti on tyhjä tai sen luonnissa tapahtui virhe",
+
+  "Attributes.EmptyKey": "Attribuutin avain on tyhjä",
+  "Attributes.InvalidValueOrType": "Attribuutin \"{0}\" arvo ja/tai tyyppi on virheellinen",
+  "Attributes.SetException": "Attribuutin \"{0}\" arvon asettaminen epäonnistui",
+
+  "Players.PlayerOrDataNotFound": "Kutsuvan pelaajan tai hänen tietojaan ei löytynyt",
+  "Players.AllKitsReceived": "Olet jo saanut kaikki saatavilla olevat paketit",
+  "Players.KitReceived": "Aloituspaketti vastaanotettu",
+
+  "Updating.Updated": "Asetukset päivitetty onnistuneesti",
+
+  "Reset.All": "Kaikkien pelaajien vastaanottamien pakettien määrä nollattu",
+  "Reset.Specified.NoPlayers": "Pelaajaluetteloa ei ole määritetty",
+  "Reset.Specified.Full": "Kaikkien määritettyjen pelaajien vastaanottamien pakettien määrä nollattu",
+  "Reset.Specified.Partial": "Kaikkien määritettyjen pelaajien vastaanottamien pakettien määrä nollattu, paitsi {0} - heitä ei löytynyt"
+}

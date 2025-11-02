@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "נכשל בקריאת קובץ התצורה StarterKit.json",
+  "IO.ConfigWriteException": "נכשל בכתיבת קובץ התצורה StarterKit.json",
+
+  "Creator.CreateItemException": "שגיאה בהגדרת הפריט \"{0}\"",
+  "Creator.ItemCodeNotFound": "הפריט \"{0}\" לא נמצא",
+  "Creator.CreateStackException": "שגיאה ביצירת מחסנית הפריטים \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "הערכה ריקה או שאירעה שגיאה במהלך יצירתה",
+
+  "Attributes.EmptyKey": "מפתח המאפיין ריק",
+  "Attributes.InvalidValueOrType": "הערך ו/או הסוג של המאפיין \"{0}\" אינם תקינים",
+  "Attributes.SetException": "נכשל בהגדרת ערך המאפיין \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "השחקן הקורא או המידע שלו לא נמצאו",
+  "Players.AllKitsReceived": "כבר קיבלת את כל הערכות הזמינות לך",
+  "Players.KitReceived": "ערכת התחלה התקבלה",
+
+  "Updating.Updated": "התצורה עודכנה בהצלחה",
+
+  "Reset.All": "מספר הערכות שהתקבלו אופס עבור כל השחקנים",
+  "Reset.Specified.NoPlayers": "רשימת השחקנים לא צוינה",
+  "Reset.Specified.Full": "מספר הערכות שהתקבלו אופס עבור כל השחקנים שצוינו",
+  "Reset.Specified.Partial": "מספר הערכות שהתקבלו אופס עבור כל השחקנים שצוינו, למעט {0} - הם לא נמצאו"
+}

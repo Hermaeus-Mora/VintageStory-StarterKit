@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Frustra legitur configurationis file StarterKit.json",
+  "IO.ConfigWriteException": "Frustra scribitur configurationis file StarterKit.json",
+
+  "Creator.CreateItemException": "Error in definiendo item \"{0}\"",
+  "Creator.ItemCodeNotFound": "Item \"{0}\" non inventus est",
+  "Creator.CreateStackException": "Error in creando acervum item \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Armamentarium vacuum est vel error in eius creatione accidit",
+
+  "Attributes.EmptyKey": "Clavis attributi vacua est",
+  "Attributes.InvalidValueOrType": "Valor et/vel genus attributi \"{0}\" invalidum est",
+  "Attributes.SetException": "Frustra valor attributi \"{0}\" positus est",
+
+  "Players.PlayerOrDataNotFound": "Lusor vocans vel eius informationes non inventae sunt",
+  "Players.AllKitsReceived": "Omnia armamentaria tibi praesto iam accepisti",
+  "Players.KitReceived": "Armamentarium initiale acceptum est",
+
+  "Updating.Updated": "Configuratio feliciter renovata est",
+
+  "Reset.All": "Numerus armamentariorum acceptorum pro omnibus lusoribus restitutus est",
+  "Reset.Specified.NoPlayers": "Index lusorum non designatus est",
+  "Reset.Specified.Full": "Numerus armamentariorum acceptorum pro omnibus lusoribus designatis restitutus est",
+  "Reset.Specified.Partial": "Numerus armamentariorum acceptorum pro omnibus lusoribus designatis restitutus est, praeter {0} - non inventi sunt"
+}

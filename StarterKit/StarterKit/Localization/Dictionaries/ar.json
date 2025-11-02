@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "فشل في قراءة ملف الإعدادات StarterKit.json",
+  "IO.ConfigWriteException": "فشل في كتابة ملف الإعدادات StarterKit.json",
+
+  "Creator.CreateItemException": "خطأ في تعريف العنصر \"{0}\"",
+  "Creator.ItemCodeNotFound": "العنصر \"{0}\" غير موجود",
+  "Creator.CreateStackException": "خطأ في تشكيل مجموعة العناصر \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "الحزمة فارغة أو حدث خطأ أثناء تشكيلها",
+
+  "Attributes.EmptyKey": "مفتاح السمة فارغ",
+  "Attributes.InvalidValueOrType": "قيمة و/أو نوع السمة \"{0}\" غير صالح",
+  "Attributes.SetException": "فشل في تعيين قيمة السمة \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "اللاعب المستدعي أو معلوماته غير موجودين",
+  "Players.AllKitsReceived": "لقد تلقيت بالفعل جميع الحزم المتاحة",
+  "Players.KitReceived": "تم استلام الحزمة الأولية",
+
+  "Updating.Updated": "تم تحديث الإعدادات بنجاح",
+
+  "Reset.All": "تم إعادة تعيين عدد الحزم المستلمة لجميع اللاعبين",
+  "Reset.Specified.NoPlayers": "قائمة اللاعبين غير محددة",
+  "Reset.Specified.Full": "تم إعادة تعيين عدد الحزم المستلمة لجميع اللاعبين المحددين",
+  "Reset.Specified.Partial": "تم إعادة تعيين عدد الحزم المستلمة لجميع اللاعبين المحددين، باستثناء {0} - لم يتم العثور عليهم"
+}

@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Не атрымалася прачытаць файл канфігурацыі StarterKit.json",
+  "IO.ConfigWriteException": "Не атрымалася запісаць файл канфігурацыі StarterKit.json",
+
+  "Creator.CreateItemException": "Памылка вызначэння прадмета \"{0}\"",
+  "Creator.ItemCodeNotFound": "Прадмет \"{0}\" не знойдзены",
+  "Creator.CreateStackException": "Памылка фарміравання стоса прадметаў \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Набор пусты або адбылася памылка падчас яго фарміравання",
+
+  "Attributes.EmptyKey": "Ключ атрыбута пусты",
+  "Attributes.InvalidValueOrType": "Значэнне і/ці тып атрыбута \"{0}\" некарэктныя",
+  "Attributes.SetException": "Не атрымалася ўсталяваць значэнне атрыбута \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Гулец, які выклікае, або яго інфармацыя не знойдзены",
+  "Players.AllKitsReceived": "Вы ўжо атрымалі ўсе даступныя вам наборы",
+  "Players.KitReceived": "Стартавы набор атрыманы",
+
+  "Updating.Updated": "Канфігурацыя паспяхова абноўлена",
+
+  "Reset.All": "Колькасць атрыманых набораў скінутая для ўсіх гульцоў",
+  "Reset.Specified.NoPlayers": "Спіс гульцоў не пазначаны",
+  "Reset.Specified.Full": "Колькасць атрыманых набораў скінутая для ўсіх пазначаных гульцоў",
+  "Reset.Specified.Partial": "Колькасць атрыманых набораў скінутая для ўсіх пазначаных гульцоў, акрамя {0} – яны не былі знойдзены"
+}

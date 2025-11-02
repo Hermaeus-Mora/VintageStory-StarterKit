@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Localization\Dictionaries\ru.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="VintagestoryAPI">
       <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
@@ -60,6 +64,37 @@
   <Content Include="modicon.png" Condition="Exists('modicon.png')">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+</ItemGroup>
+
+<ItemGroup>
+  <EmbeddedResource Include="Localization\Dictionaries\fi.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\la.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\be.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\ar.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\bg.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\he.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\sv.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\zh.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\ja.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\cs.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\haw.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\et.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\lv.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\sr.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\kk.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\is.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\en.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\de.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\it.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\es.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\fr.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\pl.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\uk.json" />
+  <EmbeddedResource Include="Localization\Dictionaries\ru.json" />
+</ItemGroup>
+
+<ItemGroup>
+  <Folder Include="assets\tulikettustarterkit\" />
 </ItemGroup>
 
 </Project>

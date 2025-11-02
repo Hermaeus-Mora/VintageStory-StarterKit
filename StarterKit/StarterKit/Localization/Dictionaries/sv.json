@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Misslyckades läsa konfigurationsfilen StarterKit.json",
+  "IO.ConfigWriteException": "Misslyckades skriva konfigurationsfilen StarterKit.json",
+
+  "Creator.CreateItemException": "Fel vid definiering av föremål \"{0}\"",
+  "Creator.ItemCodeNotFound": "Föremål \"{0}\" hittades inte",
+  "Creator.CreateStackException": "Fel vid skapande av föremålsstack \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Kitet är tomt eller ett fel uppstod vid dess skapande",
+
+  "Attributes.EmptyKey": "Attributnyckeln är tom",
+  "Attributes.InvalidValueOrType": "Värdet och/eller typen av attribut \"{0}\" är ogiltigt",
+  "Attributes.SetException": "Misslyckades att sätta värdet för attribut \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Anropande spelaren eller deras information hittades inte",
+  "Players.AllKitsReceived": "Du har redan fått alla tillgängliga kit",
+  "Players.KitReceived": "Startkit mottaget",
+
+  "Updating.Updated": "Konfigurationen uppdaterades framgångsrikt",
+
+  "Reset.All": "Antalet mottagna kit återställdes för alla spelare",
+  "Reset.Specified.NoPlayers": "Spelarlistan är inte angiven",
+  "Reset.Specified.Full": "Antalet mottagna kit återställdes för alla angivna spelare",
+  "Reset.Specified.Partial": "Antalet mottagna kit återställdes för alla angivna spelare, förutom {0} - de hittades inte"
+}

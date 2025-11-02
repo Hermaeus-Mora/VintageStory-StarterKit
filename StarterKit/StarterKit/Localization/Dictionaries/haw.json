@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "ʻAʻole hiki ke heluhelu i ka faila hoʻonohonoho ʻo StarterKit.json",
+  "IO.ConfigWriteException": "ʻAʻole hiki ke kākau i ka faila hoʻonohonoho ʻo StarterKit.json",
+
+  "Creator.CreateItemException": "Hewa i ka wehewehe ʻana i ka mea \"{0}\"",
+  "Creator.ItemCodeNotFound": "ʻAʻole i loaʻa ka mea \"{0}\"",
+  "Creator.CreateStackException": "Hewa i ka hana ʻana i ka puʻu o nā mea \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Ua ʻoluʻolu paha ke pūʻolo a i ʻole he hewa i ka wā e hana ʻia ana",
+
+  "Attributes.EmptyKey": "Nele ka kī ʻano",
+  "Attributes.InvalidValueOrType": "ʻAʻole kūpono ka waiwai a/a i ʻole ke ʻano o ka ʻano \"{0}\"",
+  "Attributes.SetException": "ʻAʻole hiki ke hoʻonoho i ka waiwai no ka ʻano \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "ʻAʻole i loaʻa ka mea pāʻani e kāhea ana a i ʻole kāna ʻike",
+  "Players.AllKitsReceived": "Ua loaʻa iā ʻoe nā pūʻolo āpau i loaʻa",
+  "Players.KitReceived": "Ua loaʻa ka pūʻolo hoʻomaka",
+
+  "Updating.Updated": "Ua hoʻololi pono ʻia ka hoʻonohonoho",
+
+  "Reset.All": "Ua hoʻihoʻi ʻia ka helu o nā pūʻolo i loaʻa no nā mea pāʻani āpau",
+  "Reset.Specified.NoPlayers": "ʻAʻole i kuhikuhi ʻia ka papa inoa o nā mea pāʻani",
+  "Reset.Specified.Full": "Ua hoʻihoʻi ʻia ka helu o nā pūʻolo i loaʻa no nā mea pāʻani i kuhikuhi ʻia āpau",
+  "Reset.Specified.Partial": "Ua hoʻihoʻi ʻia ka helu o nā pūʻolo i loaʻa no nā mea pāʻani i kuhikuhi ʻia āpau, koe wale nō ʻo {0} - ʻaʻole i loaʻa lākou"
+}

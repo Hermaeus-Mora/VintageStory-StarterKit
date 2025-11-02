@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Tókst ekki að lesa skilgreiningaskrána StarterKit.json",
+  "IO.ConfigWriteException": "Tókst ekki að skrifa skilgreiningaskrána StarterKit.json",
+
+  "Creator.CreateItemException": "Villa við að skilgreina hlut \"{0}\"",
+  "Creator.ItemCodeNotFound": "Hlutur \"{0}\" fannst ekki",
+  "Creator.CreateStackException": "Villa við að búa til hrúgu af hlutum \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Settur er tómur eða villa kom upp við gerð hans",
+
+  "Attributes.EmptyKey": "Eigindarlykill er tómur",
+  "Attributes.InvalidValueOrType": "Gildi og/eða tegund eigindar \"{0}\" er ógild",
+  "Attributes.SetException": "Tókst ekki að setja gildi eigindar \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Spilari sem kallaði eða upplýsingar hans fannst ekki",
+  "Players.AllKitsReceived": "Þú hefur þegar fengið alla tiltæka setti",
+  "Players.KitReceived": "Byrjendasetti móttekinn",
+
+  "Updating.Updated": "Skilgreining uppfærð",
+
+  "Reset.All": "Fjöldi móttekinnna setta endurstilltur fyrir alla spilara",
+  "Reset.Specified.NoPlayers": "Listi yfir spilara ekki skilgreindur",
+  "Reset.Specified.Full": "Fjöldi móttekinnna setta endurstilltur fyrir alla tiltekna spilara",
+  "Reset.Specified.Partial": "Fjöldi móttekinnna setta endurstilltur fyrir alla tiltekna spilara, nema {0} - þeir fundust ekki"
+}

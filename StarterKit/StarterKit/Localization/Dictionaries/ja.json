@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "StarterKit.json設定ファイルの読み込みに失敗しました",
+  "IO.ConfigWriteException": "StarterKit.json設定ファイルの書き込みに失敗しました",
+
+  "Creator.CreateItemException": "アイテム「{0}」の定義中にエラーが発生しました",
+  "Creator.ItemCodeNotFound": "アイテム「{0}」が見つかりません",
+  "Creator.CreateStackException": "アイテムスタック「{0}」×{1}の作成中にエラーが発生しました",
+  "Creator.EmptyOrErrorKit": "キットが空であるか、作成中にエラーが発生しました",
+
+  "Attributes.EmptyKey": "属性キーが空です",
+  "Attributes.InvalidValueOrType": "属性「{0}」の値やタイプが無効です",
+  "Attributes.SetException": "属性「{0}」の値を設定できませんでした",
+
+  "Players.PlayerOrDataNotFound": "呼び出し元のプレイヤーまたはその情報が見つかりません",
+  "Players.AllKitsReceived": "利用可能なすべてのキットを既に受け取っています",
+  "Players.KitReceived": "スターターキットを受け取りました",
+
+  "Updating.Updated": "設定が正常に更新されました",
+
+  "Reset.All": "全てのプレイヤーの受け取りキット数がリセットされました",
+  "Reset.Specified.NoPlayers": "プレイヤーリストが指定されていません",
+  "Reset.Specified.Full": "指定された全てのプレイヤーの受け取りキット数がリセットされました",
+  "Reset.Specified.Partial": "指定されたプレイヤーのうち、{0}を除く全員の受け取りキット数がリセットされました - これらのプレイヤーは見つかりませんでした"
+}

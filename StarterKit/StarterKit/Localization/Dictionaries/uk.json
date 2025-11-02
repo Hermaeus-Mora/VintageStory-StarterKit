@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "Не вдалося прочитати файл конфігурації StarterKit.json",
+  "IO.ConfigWriteException": "Не вдалося записати файл конфігурації StarterKit.json",
+
+  "Creator.CreateItemException": "Помилка визначення предмета \"{0}\"",
+  "Creator.ItemCodeNotFound": "Предмет \"{0}\" не знайдено",
+  "Creator.CreateStackException": "Помилка формування стаку предметів \"{0}\" × {1}",
+  "Creator.EmptyOrErrorKit": "Набір порожній або сталася помилка під час його формування",
+
+  "Attributes.EmptyKey": "Ключ атрибута порожній",
+  "Attributes.InvalidValueOrType": "Значення та/або тип атрибута \"{0}\" некоректні",
+  "Attributes.SetException": "Не вдалося встановити значення атрибута \"{0}\"",
+
+  "Players.PlayerOrDataNotFound": "Гравець, що викликав, або його інформація не знайдені",
+  "Players.AllKitsReceived": "Ви вже отримали всі доступні вам набори",
+  "Players.KitReceived": "Стартовий набір отримано",
+
+  "Updating.Updated": "Конфігурацію успішно оновлено",
+
+  "Reset.All": "Кількість отриманих наборів скинуто для всіх гравців",
+  "Reset.Specified.NoPlayers": "Список гравців не вказано",
+  "Reset.Specified.Full": "Кількість отриманих наборів скинуто для всіх вказаних гравців",
+  "Reset.Specified.Partial": "Кількість отриманих наборів скинуто для всіх вказаних гравців, крім {0} – їх не було знайдено"
+}

@@ -1,0 +1,24 @@
+{
+  "IO.ConfigReadException": "StarterKit.json конфигурация файлын оқу мүмкін болмады",
+  "IO.ConfigWriteException": "StarterKit.json конфигурация файлын жазу мүмкін болмады",
+
+  "Creator.CreateItemException": "\"{0}\" бұйымын анықтау кезінде қате",
+  "Creator.ItemCodeNotFound": "\"{0}\" бұйымы табылмады",
+  "Creator.CreateStackException": "\"{0}\" × {1} бұйымдар стекін құру кезінде қате",
+  "Creator.EmptyOrErrorKit": "Жиынтық бос немесе оны құру кезінде қате орын алды",
+
+  "Attributes.EmptyKey": "Атрибут кілті бос",
+  "Attributes.InvalidValueOrType": "\"{0}\" атрибутының мәні және/немесе түрі жарамсыз",
+  "Attributes.SetException": "\"{0}\" атрибутының мәнін орнату мүмкін болмады",
+
+  "Players.PlayerOrDataNotFound": "Шақырып тұрған ойыншы немесе оның ақпараты табылмады",
+  "Players.AllKitsReceived": "Сіз қол жетімді барлық жиынтықтарды алғансыз",
+  "Players.KitReceived": "Бастапқы жиынтық алынды",
+
+  "Updating.Updated": "Конфигурация сәтті жаңартылды",
+
+  "Reset.All": "Барлық ойыншылар үшін алынған жиынтықтар саны қайта орнатылды",
+  "Reset.Specified.NoPlayers": "Ойыншылар тізімі көрсетілмеген",
+  "Reset.Specified.Full": "Көрсетілген барлық ойыншылар үшін алынған жиынтықтар саны қайта орнатылды",
+  "Reset.Specified.Partial": "Көрсетілген барлық ойыншылар үшін алынған жиынтықтар саны қайта орнатылды, {0} қоспағанда - олар табылмады"
+}
