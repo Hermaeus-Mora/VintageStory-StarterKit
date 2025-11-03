@@ -1,4 +1,5 @@
-﻿using StarterKit.Core;
+﻿using StarterKit.Commands;
+using StarterKit.Core;
 using StarterKit.Localization;
 using StarterKit.Tweaks.ItemStack.Attributes;
 using System;
@@ -16,8 +17,12 @@ namespace StarterKit
         /// <summary>
         /// API сервера.
         /// </summary>
-        private readonly ICoreServerAPI API;
+        private readonly ICoreServerAPI? API;
 
+        /// <summary>
+        /// Указывает, нужно ли сбрасывать счётчик полученных наборов после смерти.
+        /// </summary>
+        public bool ResetOnDeath;
         /// <summary>
         /// Позволенное количество получений для игрока.
         /// </summary>
@@ -30,13 +35,20 @@ namespace StarterKit
         /// <summary>
         /// Конструктор конфигурации мода.
         /// </summary>
-        /// <param name="api">API сервера.</param>
-        public StarterKitConfig(ICoreServerAPI api)
+        public StarterKitConfig()
         {
-            API = api;
-
+            ResetOnDeath = false;
             PermittedReceives = 1;
             Items = Array.Empty<StackInfo?>();
+        }
+        /// <summary>
+        /// Конструктор конфигурации мода.
+        /// </summary>
+        /// <param name="api">API сервера.</param>
+        internal StarterKitConfig(ICoreServerAPI api) : this()
+        {
+            API = api;
+            API.Event.PlayerDeath += OnPlayerDeath;
         }
 
         /// <summary>
@@ -45,6 +57,10 @@ namespace StarterKit
         /// <param name="createIfError">Записать новый файл конфигурации при ошибке.</param>
         public void Load(bool createIfError = false)
         {
+            // Проверка корректности
+            if (API == null)
+                return;
+
             // Чтение файла конфигурации
             StarterKitConfig? config = null;
             try
@@ -74,6 +90,10 @@ namespace StarterKit
         /// </summary>
         public void Save()
         {
+            // Проверка корректности
+            if (API == null)
+                return;
+
             try
             {
                 API.StoreModConfig<StarterKitConfig>(this, $"{StarterKitModSystem.ModName}.json");
@@ -94,6 +114,7 @@ namespace StarterKit
             if (config == null)
                 return;
 
+            ResetOnDeath = config.ResetOnDeath;
             PermittedReceives = config.PermittedReceives;
             Items = config.Items ?? Array.Empty<StackInfo?>();
         }
@@ -103,6 +124,10 @@ namespace StarterKit
         /// <returns>Список стаков или пустой, если возникла ошибка.</returns>
         public List<ItemStack> CreateItems()
         {
+            // Проверка корректности
+            if (API == null)
+                return [];
+
             // Копирование ссылки на информацию о стаках
             StackInfo?[] items = Items;
 
@@ -180,6 +205,22 @@ namespace StarterKit
 
             // Возврат
             return stacks;
+        }
+
+        /// <summary>
+        /// Обработчик события смерти игрока.
+        /// </summary>
+        /// <param name="byPlayer">Погибший игрок.</param>
+        /// <param name="damageSource">Источник урона.</param>
+        private void OnPlayerDeath(IServerPlayer byPlayer, DamageSource damageSource)
+        {
+            // Проверка корректности
+            if (API == null || byPlayer == null)
+                return;
+
+            // Сброс счётчика полученных наборов
+            if (ResetOnDeath)
+                byPlayer.ServerData.CustomPlayerData.Remove(StarterKitCommand.ReceivesKey);
         }
     }
 }
