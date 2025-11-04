@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace StarterKit.Tweaks.ItemStack.Attributes
 {
@@ -77,6 +78,12 @@ namespace StarterKit.Tweaks.ItemStack.Attributes
         /// <returns>Конвертированное значение.</returns>
         private static object? ConvertToFloat(string? value)
         {
+            if (value == null)
+                return null;
+
+            if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != "." && value.Contains('.'))
+                value = value.Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
             return float.TryParse(value, out float result) ? result : null;
         }
         /// <summary>
@@ -86,6 +93,12 @@ namespace StarterKit.Tweaks.ItemStack.Attributes
         /// <returns>Конвертированное значение.</returns>
         private static object? ConvertToDouble(string? value)
         {
+            if (value == null)
+                return null;
+
+            if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != "." && value.Contains('.'))
+                value = value.Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
             return double.TryParse(value, out double result) ? result : null;
         }
         /// <summary>

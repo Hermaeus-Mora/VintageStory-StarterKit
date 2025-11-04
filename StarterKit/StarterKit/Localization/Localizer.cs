@@ -140,7 +140,8 @@ namespace StarterKit.Localization
             string? value = SourceDictionary[key];
 
             // Форматирование и возврат
-            return value != null ? string.Format(value, args) : key;
+            try { return value != null ? string.Format(value, args) : key; }
+            catch { return key; }
         }
         /// <summary>
         /// Получает значение.
@@ -187,7 +188,8 @@ namespace StarterKit.Localization
                 value = SourceDictionary[key];
 
             // Форматирование и возврат
-            return value != null ? string.Format(value, args) : key;
+            try { return value != null ? string.Format(value, args) : key; }
+            catch { return key; }
         }
         /// <summary>
         /// Устанавливает исходный словарь.
