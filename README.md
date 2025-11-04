@@ -53,8 +53,8 @@
   "bool" – System.Boolean;\
   "int" – System.Int32;\
   "long" – System.Int64;\
-  "float" – System.Single;\
-  "double" – System.Double;\
+  "float" – System.Single, NumberDecimalSeparator должен быть ".";\
+  "double" – System.Double, NumberDecimalSeparator должен быть ".";\
   "byte[]" – System.Byte[], в файле конфигурации записывется как hex-строка;\
   "string" – System.String.
 </details>
