@@ -3,7 +3,7 @@
   "side": "server",
   "modid": "starterkitbytulikettu",
   "name": "Starter Kit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Adds the ability to create a starter kit.",
   "authors": [ "Tulikettu" ],
   "dependencies": { "game": "1.21.0" }

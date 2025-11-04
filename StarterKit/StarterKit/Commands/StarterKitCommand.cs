@@ -2,7 +2,6 @@
 using StarterKit.Localization;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 
@@ -90,7 +89,7 @@ namespace StarterKit.Commands
                 return TextCommandResult.Success(Localizer.Get(serverPlayer.LanguageCode, "Players.AllKitsReceived"));
 
             // Формирование набора
-            List<ItemStack> stacks = Config.CreateItems();
+            List<ItemStack> stacks = Config.CreateItems(serverPlayer);
             if (stacks.Count == 0)
                 return TextCommandResult.Success(Localizer.Get(serverPlayer.LanguageCode, "Creator.EmptyOrErrorKit"));
 

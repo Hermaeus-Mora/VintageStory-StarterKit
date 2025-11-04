@@ -14,6 +14,10 @@
         /// </summary>
         public int Amount;
         /// <summary>
+        /// Класс, которому предназначен стак.
+        /// </summary>
+        public string? ForClass;
+        /// <summary>
         /// Атрибуты стака предметов.
         /// </summary>
         public StackAttribute[]? Attributes;

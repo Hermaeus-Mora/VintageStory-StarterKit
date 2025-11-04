@@ -1,5 +1,6 @@
 ﻿using StarterKit.Commands;
 using StarterKit.Core;
+using StarterKit.Extensions;
 using StarterKit.Localization;
 using StarterKit.Tweaks.ItemStack.Attributes;
 using System;
@@ -119,13 +120,14 @@ namespace StarterKit
             Items = config.Items ?? Array.Empty<StackInfo?>();
         }
         /// <summary>
-        /// Создаёт стаки предметов стартового набора.
+        /// Создаёт стаки предметов стартового набора для игрока.
         /// </summary>
+        /// <param name="player">Игрок.</param>
         /// <returns>Список стаков или пустой, если возникла ошибка.</returns>
-        public List<ItemStack> CreateItems()
+        public List<ItemStack> CreateItems(IServerPlayer player)
         {
             // Проверка корректности
-            if (API == null)
+            if (API == null || player == null)
                 return [];
 
             // Копирование ссылки на информацию о стаках
@@ -143,8 +145,12 @@ namespace StarterKit
                 if (info.Amount <= 0)
                     continue;
 
+                // Игнорировать, если класс не подходит
+                if (info.ForClass != null && info.ForClass != player.GetClass())
+                    continue;
+
                 // Получение предмета по коду
-                Item? item;
+                CollectibleObject? item;
                 try
                 {
                     item = API.World.GetItem(new AssetLocation(info.Code));
@@ -155,6 +161,23 @@ namespace StarterKit
                     API.Logger.Error(ex);
                     return [];
                 }
+
+                // Поиск предмета среди блоков
+                if (item == null)
+                {
+                    try
+                    {
+                        item = API.World.GetBlock(new AssetLocation(info.Code));
+                    }
+                    catch (Exception ex)
+                    {
+                        API.Logger.Error(Localizer.Get("Creator.CreateItemException", info.Code ?? string.Empty));
+                        API.Logger.Error(ex);
+                        return [];
+                    }
+                }
+
+                // Предмет не найден
                 if (item == null)
                 {
                     API.Logger.Error(Localizer.Get("Creator.ItemCodeNotFound", info.Code ?? string.Empty));
